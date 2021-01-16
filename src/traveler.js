@@ -22,3 +22,5 @@ class Traveler {
     }, 0)
   }
 }
+
+export default Traveler;
