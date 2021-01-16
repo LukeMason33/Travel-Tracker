@@ -68,5 +68,5 @@ describe ('Traveler', function () {
     }]);
   })
 
-  it()
+  // it()
 })
