@@ -10,7 +10,7 @@ class Traveler {
   findUsersTrips (dataSet) {
     dataSet.filter(data => {
       if (data.userID === this.id) {
-        this.trips.push(data);
+        return this.trips.push(data);
       }
     })
   }
