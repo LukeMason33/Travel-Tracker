@@ -19,3 +19,5 @@ class Trip {
     return this.cost = (totalLodgingCost + totalFlightCost + agentFee);
   }
 }
+
+export default Trip;

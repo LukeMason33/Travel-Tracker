@@ -1,3 +1,5 @@
+import Trip from './trip';
+
 class Traveler {
   constructor(user) {
     this.id = user.id;
@@ -7,17 +9,18 @@ class Traveler {
     this.totalSpent = 0
   }
 
-  findUsersTrips (dataSet) {
-    dataSet.filter(data => {
-      if (data.userID === this.id) {
-        return this.trips.push(data);
+  findUsersTrips (tripsData, destinationData) {
+    tripsData.filter(trip => {
+      if (trip.userID === this.id) {
+        this.trips.push(new Trip(trip));
       }
     })
+    this.trips.forEach(trip => trip.calculateTotalCostofTrip(destinationData));
   }
 
   calculateTotalSpent() {
-    this.totalSpent = his.trips.reduce((total, trip) => {
-      acc += trip.cost;
+    this.totalSpent = this.trips.reduce((total, trip) => {
+      total += trip.cost;
       return total;
     }, 0)
   }

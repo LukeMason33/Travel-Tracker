@@ -1,5 +1,6 @@
 import {expect} from 'chai';
 
+import destinations from './test-data/destinations-data';
 import traveler from './test-data/traveler-data';
 import trips from './test-data/trips-data';
 import Traveler from '../src/traveler';
@@ -36,7 +37,7 @@ describe ('Traveler', function () {
   })
 
   it('should be able to find the user specific trips', function() {
-    user.findUsersTrips(trips);
+    user.findUsersTrips(trips, destinations);
     expect(user.trips).to.deep.eq([{
         "id": 1,
         "userID": 1,
@@ -45,7 +46,8 @@ describe ('Traveler', function () {
         "date": "2019/09/16",
         "duration": 8,
         "status": "approved",
-        "suggestedActivities": []
+        "suggestedActivities": [],
+        "cost": 5819
     },
     {
         "id": 3,
@@ -55,8 +57,10 @@ describe ('Traveler', function () {
         "date": "2020/05/22",
         "duration": 17,
         "status": "pending",
-        "suggestedActivities": []
-    },{
+        "suggestedActivities": [],
+        "cost": 4543
+    },
+    {
         "id": 5,
         "userID": 1,
         "destinationID": 29,
@@ -64,9 +68,14 @@ describe ('Traveler', function () {
         "date": "2020/04/30",
         "duration": 18,
         "status": "approved",
-        "suggestedActivities": []
+        "suggestedActivities": [],
+        "cost": 5214
     }]);
   })
 
-  // it()
+   it('should calculate the total amount spent by traveler', function() {
+     user.findUsersTrips(trips, destinations);
+     user.calculateTotalSpent();
+     expect(user.totalSpent).to.eq(15576);
+   })
 })
