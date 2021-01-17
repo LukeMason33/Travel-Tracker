@@ -2,12 +2,15 @@
 
 }
 
-section {
-  border: $border;
+.flight-cards-container {
+  border: $border $secondary-background;
+  border-radius: 10px;
+  background-color: $secondary-background;
+  height: 55vh;
+  opacity: 60%;
 }
 
 header {
-  border: $border;
 }
 
 .page-header-img {
