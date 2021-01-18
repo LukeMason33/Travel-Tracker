@@ -1,15 +1,39 @@
-.main-page-container {
 
-}
-
-section {
-  border: $border;
+.flight-cards-container {
+  display: flex;
+  align-items: center;
+  border: $border $secondary-background;
+  border-radius: $round-border;
+  background-color: $secondary-background;
+  height: 55vh;
 }
 
 header {
-  border: $border;
+  display: flex;
+  justify-content: space-between;
+  color: $header-font-color;
+  align-items: center;
+}
+
+h1 {
+  margin: 1vh;
+}
+
+.flight-section-title {
+  color: $header-font-color;
+  font-weight: bolder;
 }
 
 .page-header-img {
   height: 8vh;
+}
+
+.dashboard-header {
+  height: 9vh;
+}
+
+hr {
+  background-color: $secondary-background;
+  border-color: $secondary-background;
+  width: 100%;
 }

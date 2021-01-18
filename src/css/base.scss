@@ -1,10 +1,10 @@
 @import "variables";
 @import "traveler-dashboard";
+@import "flight-card";
+@import "buttons";
 
-
-$primary-background: white;
-;
 
 body {
   background: $primary-background;
+  font-family: $primary-font;
 }
