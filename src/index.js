@@ -27,5 +27,6 @@ function generateUsersInfo() {
       currentUser.findUsersTrips(data[1].trips, destinationsData);
       currentUser.calculateTotalSpent();
       domUpdates.generateWelcomeBanner(currentUser.getUsersFirstName());
+      domUpdates.placeCardsInCorrectSection(currentUser.trips, destinationsData);
     })
 }
