@@ -18,6 +18,10 @@ class Trip {
     let agentFee = (totalLodgingCost + totalFlightCost) * 0.1;
     return this.cost = (totalLodgingCost + totalFlightCost + agentFee);
   }
+
+  getDestinationInfoById (dataSet) {
+    return dataSet.destinations.find(data => this.destinationID === data.id);
+  }
 }
 
 export default Trip;
