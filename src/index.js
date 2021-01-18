@@ -15,7 +15,6 @@ window.addEventListener('load', generateUsersInfo);
 
 //GLOBAL VARIABLES
 let currentUser;
-let tripsData;
 let destinationsData;
 
 //FETCH DATA
@@ -23,11 +22,8 @@ function generateUsersInfo() {
   Promise.all([fetchAPI.fetchUserData(1), fetchAPI.fetchTripsData(), fetchAPI.fetchDestinationsData()])
     .then(data => {
       currentUser = new Traveler(data[0]);
-      tripsData = data[1];
       destinationsData = data[2];
-      console.log(destinationsData)
-
-      currentUser.findUsersTrips(tripsData, destinationsData);
-      console.log(currentUser);
+      currentUser.findUsersTrips(data[1].trips, destinationsData);
+      currentUser.calculateTotalSpent();
     })
 }
