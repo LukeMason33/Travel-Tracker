@@ -1,0 +1,34 @@
+.flight-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  width: 25vw;
+  height: 55vh;
+  border-radius: $round-border;
+  margin: 0;
+}
+
+.destination-img {
+  border-radius: $round-border;
+  height: 25vh;
+  width: 24.5vw;
+  align-self: center;
+}
+
+.trip-dates-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  margin: .7vh;
+  margin-bottom: 2vh;
+  color: $text-color;
+  font-weight: bolder;
+}
+
+.card-header {
+  margin: .7vh;
+  color: $header-font-color;
+}

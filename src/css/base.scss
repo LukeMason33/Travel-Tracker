@@ -1,7 +1,9 @@
 @import "variables";
 @import "traveler-dashboard";
+@import "flight-card";
 
 
 body {
   background: $primary-background;
+  font-family: $primary-font;
 }
