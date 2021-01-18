@@ -10,7 +10,7 @@ class Traveler {
   }
 
   findUsersTrips (tripsData, destinationData) {
-    tripsData.filter(trip => {
+    tripsData.trips.filter(trip => {
       if (trip.userID === this.id) {
         this.trips.push(new Trip(trip));
       }
