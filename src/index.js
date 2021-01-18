@@ -7,6 +7,7 @@ import './css/base.scss';
 //JS FILES
 import Traveler from './traveler.js';
 import fetchAPI from './fetch.js';
+import domUpdates from './domUpdates.js';
 
 //QUERY SELECTORS
 
@@ -25,5 +26,6 @@ function generateUsersInfo() {
       destinationsData = data[2];
       currentUser.findUsersTrips(data[1].trips, destinationsData);
       currentUser.calculateTotalSpent();
+      domUpdates.generateWelcomeBanner(currentUser.getUsersFirstName());
     })
 }
