@@ -20,6 +20,32 @@
         <button name="book-flight" class="book-now-btn">Book Flight</button>
       </section>
       <hr>
+      <form class="book-flight-form">
+        <h1 class="form-title">Please Fill in the Following Form to Request a Trip</h1>
+        <div class="destinations-container">
+          <label class="select-destination-label" for="select-destination">Select Destination: </label>
+          <select name="select-destination" class="destinations-list"></select>
+        </div>
+        <div class="slect-date-container">
+          <label for="select-date" class="select-date-label">Select a Start Date: </label>
+          <input name ="select-date" type="date">
+        </div>
+        <div class="trip-length">
+          <label for="number-of-days" class="select-duration-label">How Long Will This Trip Be (In Days)?</label>
+          <input nam="number-of-days" class="select-duration" placeholder="e.g. 4">
+        </div>
+        <div class="number-of-travelers-container">
+          <label class="number-of-travelers-label" for ="number-of-travelers">How Many People Will be Traveling? </label>
+          <input name="number-of-travelers" type="text" placeholder="e.g. 2">
+        </div>
+        <div class="cost-of-trip-container">
+          <h2 class="new-trip-cost">Total Price (10% Agent Fee Included):</h2>
+        </div>
+        <div class="form-buttons-container">
+          <button type="button" class="retun-to-dashboard">Return To Main</button>
+          <button type="button" class="submit-request">Submit Trip</button>
+        </div>
+      </form>
       <main id="main-dashboard">
         <div class="flights-content-container">
           <section  class="flight-section" id="upcoming-flights">

@@ -20,7 +20,7 @@ let destinationsData;
 
 //FETCH DATA
 function generateUsersInfo() {
-  Promise.all([fetchAPI.fetchUserData(1), fetchAPI.fetchTripsData(), fetchAPI.fetchDestinationsData()])
+  Promise.all([fetchAPI.fetchUserData(5), fetchAPI.fetchTripsData(), fetchAPI.fetchDestinationsData()])
     .then(data => {
       currentUser = new Traveler(data[0]);
       destinationsData = data[2];
