@@ -40,6 +40,9 @@ const domUpdates = {
 
   placeCardsInCorrectSection(trips, destinations) {
     let currentTime = new Date().getTime();
+    pendingFlightsSection.innerHTML = '';
+    upcomingFlightsSection.innerHTML = '';
+    pastFlightsSection.innerHTML = '';
     trips.forEach(trip => {
       let tripDateToNum = new Date(trip.date).getTime();
       if (trip.status === 'pending') {

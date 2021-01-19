@@ -28,18 +28,18 @@ const fetchAPI = {
   },
 
   postNewTrip: (trip) => {
-    return featch("http://localhost:3001/api/v1/trips", {
+    return fetch("http://localhost:3001/api/v1/trips", {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        id: trip.id,
-        userID: trip.userID,
-        destinationID: trip.destinationID,
-        travelers: trip.travelers,
-        date: trip.date,
-        duration: trip.duration,
-        status: 'pending',
-        suggestedActivities: []
+        'id': trip.id,
+        'userID': trip.userID,
+        'destinationID': trip.destinationID,
+        'travelers': trip.travelers,
+        'date': trip.date,
+        'duration': trip.duration,
+        'status': trip.status,
+        'suggestedActivities': trip.suggestedActivities
       })
     })
     .then(response => fetchAPI.handleFetchError(response))
