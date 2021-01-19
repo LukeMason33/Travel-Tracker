@@ -51,29 +51,22 @@ Visit live site [here]() (we will build this live right?)
 4. Chai & Mocha
 
 ## Planning
-We utilized github projects for project management, that board can be found [here](https://github.com/LukeMason33/refactor-tractor/projects/1) <br>
-The detailed spec for this project can be found [here](https://frontend.turing.io/projects/module-2/refactor-tractor-wc.html) <br>
-The original project spec for the codebase we were provided can be found [here](https://frontend.turing.io/projects/whats-cookin.html).
+I utilized issues and a project work board to help me organize my work through this process.
 
 ### Testing development
-We expanded upon the testing built into the original code base to check functionality. We adjusted the original tests to utilize new data formatting to match the data from the server.
+I tested each property and each method for each class. I covered mostly happy paths in the testing, with a few sad paths in there as well.
 
 ### Challenges
-* This was our first experience receiving a large codebase we were unfamiliar with and needing to work on it. It was certainly a challenge to familiarize ourselves with what the code was doing and it was quite an undertaking to reorganize existing code to improve organization and functionality. Initially we struggled to find a good place to jump in and start refactoring, but eventually decided we should start by determining what within the codebase was already functioning well in terms of JavaScript functionality and User Experience/Interaction. After that, we were better able to plan out how to most efficiently move forward and use our time by dividing and conquering small tasks and communicating openly and frequently about new issues we found, or changes we would like to implement. We ended up having to separate our desired changes into `required` to dos and `desired` to dos (things that would be nice to implement but not our minimum viable product).
-* We ran into some resistance when trying to access all info from our network requests simultaneously. After some research we found `Promise.all()` which solved our issues, as it returns all the input network requests together.
-* Utilizing Sass/SCSS for the first time was interesting. It took some additional research on syntax and functionality of mixins vs built in color functions. The biggest challenge here was taking messy provided CSS and converting it into SCSS while refactoring and adjusting styling to improve UX.
-* Understanding WebPack - It was our first experience with WebPack so we had to do some research and fiddling to get it to work as we expected/wanted it to.
+* The biggest challenge for myself in this project was displaying error messages based on failed fetch requests. I found this to be difficult because we were never introduced on how to treat different error messages, we only knew that other ones existed.
+* Another big challenge for me was to find the time to put all my attention in the styling. The javascript side of things were very heavy on this project, so I had to go with a very minimal looking website, but it does function greatly.
 
 ### Wins
-* Developing a strong understanding of a foreign codebase and being able to refactor significantly. While this was also one of our major challenges during the project, we were all very proud of our ability to quickly familiarize ourselves with the functionality and therefore refactor effectively.
-* Teamwork and dividing up work successfully without any major merge conflicts. We chose to implement a divide and conquer workflow, and because of our clear and frequent communication, we were extremely successful in getting tasks done more quickly. We also took the time to walk through all the changes together to be sure we fully understood all the changes.
+* The biggest win of this project was successfully achieving POST requests and getting the dom to update with new data added to our server. It's really cool to see how data can be modified on the clients computer, then the data is sent to the server where it is than modified, and then sent back to have the clients machine display that newly changed data.
 
 ## Future Iterations
-* Adding Recipes: A user would be able to submit a recipe to the site, and after admin review, it could be approved and added to the recipe database.
-* Admin view: Developing an Admin view for the site that could show some User trends and any submitted recipes waiting for review.
-* Rating Recipes: After a user has made a recipe they should be prompted to rate the recipe on a few different qualities (maybe difficulty level and approval). These ratings could then be visible to other users.
-* Providing the cost of the missing ingredients in order to make a recipe.
-* The button to remove items from pantry to only work if conditions are met where the user has enough of each ingredient to make the recipe.
+* I want to make a traveler agent side to this site where the would have full control over travelers pending trips. On this side, you can approve trips, decline trips, and add new destinations for the travelers to go to.
+* I would like to clean up the site and include more images and styling.
+* I would like to have the trip cards be clickable, which would then show more information about the trip, give you a cost breakdown, and other information that the user might find helpful.
 
 ## Project Members
-This project was designed and implemented by [Luke Mason](https://github.com/LukeMason33), [Lucas Merchant](https://github.com/lbmerchant93), and [Kristen Bair](https://github.com/kristenmb)#
+This project was designed and implemented by [Luke Mason](https://github.com/LukeMason33)
