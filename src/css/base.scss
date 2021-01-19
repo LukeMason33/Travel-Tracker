@@ -27,6 +27,12 @@ label {
   border-radius: $round-border;
 }
 
+.calculate-cost-button {
+  background-color: $text-color;
+  width: 15vw;
+  height: 5vh;
+}
+
 .hidden {
   display: none;
 }
