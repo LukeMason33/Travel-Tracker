@@ -25,14 +25,14 @@ const loginButton = document.querySelector('.login-button');
 
 
 //EVENT LISTENERS
-window.addEventListener('load', generateUsersInfo);
+// window.addEventListener('load', generateUsersInfo);
 bookAFlightBtn.addEventListener('click', function() {
   domUpdates.displayBookFlightForm(destinationsData);
 });
 claculateNewTripCostBtn.addEventListener('click', claculateNewTripCost);
 returnToDashboardBtn.addEventListener('click', domUpdates.returnToDashboard);
 submitTripBtn.addEventListener('click', addTripRequest);
-loginButton.addEventListener('click', domUpdates.showDashboardAfterLogin);
+loginButton.addEventListener('click', checkLoginCredentials);
 
 //GLOBAL VARIABLES
 let currentUser;
@@ -40,8 +40,8 @@ let destinationsData;
 let tripsData;
 
 //FETCH DAT
-function generateUsersInfo() {
-  Promise.all([fetchAPI.fetchUserData(6), fetchAPI.fetchTripsData(), fetchAPI.fetchDestinationsData()])
+function generateUsersInfo(userId) {
+  Promise.all([fetchAPI.fetchUserData(userId), fetchAPI.fetchTripsData(), fetchAPI.fetchDestinationsData()])
     .then(data => {
       currentUser = new Traveler(data[0]);
       tripsData = data[1];
@@ -85,4 +85,16 @@ function addTripRequest() {
       currentUser.calculateTotalSpent();
       domUpdates.placeCardsInCorrectSection(currentUser.trips, destinationsData);
     });
+  domUpdates.returnToDashboard();
+  event.preventDefault();
+}
+
+function checkLoginCredentials() {
+  if(loginUsernameInput.value.length <= 10 && loginUsernameInput.value.includes('traveler') && loginPasswordInput.value === 'travel2020') {
+    let userID = Number(loginUsernameInput.value.slice(-2));
+    generateUsersInfo(userID);
+    domUpdates.showDashboardAfterLogin();
+  } else {
+    console.log('no');
+  }
 }
