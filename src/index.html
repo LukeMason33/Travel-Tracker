@@ -15,13 +15,13 @@
         <h1 class="welcome-message"></h1>
       </header>
       <hr>
-      <section id="book-a-flight">
+      <section class="book-a-flight">
         <label for="book-flight">Book a Flight With Your Agent</label>
         <button name="book-flight" class="book-now-btn">Book Flight</button>
       </section>
       <hr>
-      <form class="book-flight-form">
-        <h1 class="form-title">Please Fill in the Following Form to Request a Trip</h1>
+      <form class="book-flight-form hidden">
+        <h1 class="form-title">Request A Trip</h1>
         <div class="destinations-container">
           <label class="select-destination-label" for="select-destination">Select Destination: </label>
           <select name="select-destination" class="destinations-list"></select>
@@ -46,7 +46,7 @@
           <button type="button" class="submit-request">Submit Trip</button>
         </div>
       </form>
-      <main id="main-dashboard">
+      <main class="main-dashboard">
         <div class="flights-content-container">
           <section  class="flight-section" id="upcoming-flights">
             <h2 class="flight-section-title">Upcoming Flights</h2>

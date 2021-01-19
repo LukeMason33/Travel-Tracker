@@ -10,15 +10,20 @@ import fetchAPI from './fetch.js';
 import domUpdates from './domUpdates.js';
 
 //QUERY SELECTORS
+let bookAFlightBtn = document.querySelector('.book-now-btn');
 
 //EVENT LISTENERS
 window.addEventListener('load', generateUsersInfo);
+bookAFlightBtn.addEventListener('click', function() {
+  domUpdates.displayBookFlightForm(destinationsData);
+});
+
 
 //GLOBAL VARIABLES
 let currentUser;
 let destinationsData;
 
-//FETCH DATA
+//FETCH DAT
 function generateUsersInfo() {
   Promise.all([fetchAPI.fetchUserData(5), fetchAPI.fetchTripsData(), fetchAPI.fetchDestinationsData()])
     .then(data => {

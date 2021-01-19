@@ -1,6 +1,10 @@
-.book-now-btn {
+button {
   background-color: $header-font-color;
   color: white;
   border-radius: $round-border;
   height: 5vh;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
 }

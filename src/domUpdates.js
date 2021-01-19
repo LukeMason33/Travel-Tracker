@@ -3,6 +3,10 @@ let welcomeBanner = document.querySelector('.welcome-message');
 let upcomingFlightsSection = document.querySelector('.upcoming-flights');
 let pendingFlightsSection = document.querySelector('.pending-flights');
 let pastFlightsSection = document.querySelector('.past-flights');
+let mainDashboard = document.querySelector('.main-dashboard');
+let bookAFlightSection = document.querySelector('.book-a-flight');
+let bookAFlightForm = document.querySelector('.book-flight-form');
+let destinationsDropdown = document.querySelector('.destinations-list');
 
 //FUNCTIONS
 const domUpdates = {
@@ -44,6 +48,20 @@ const domUpdates = {
         this.generateTripCard(trip, destinations, pastFlightsSection);
       }
     })
+  },
+
+  populateDestinationsForForm (destinationsData) {
+    destinationsData.destinations.forEach(destination => {
+      destinationsDropdown.innerHTML += `
+        <option value="${destination.id}">${destination.destination}</option>`
+    })
+  },
+
+  displayBookFlightForm (dataSet) {
+    mainDashboard.classList.add('hidden');
+    bookAFlightSection.classList.add('hidden');
+    bookAFlightForm.classList.remove('hidden');
+    this.populateDestinationsForForm(dataSet);
   }
 }
 
