@@ -46,10 +46,15 @@ function generateUsersInfo(userId) {
       tripsData = data[1];
       destinationsData = data[2];
       currentUser.findUsersTrips(tripsData.trips, destinationsData);
-      currentUser.calculateTotalSpent();
+      calculateUsersSpentLastYear(currentUser);
       domUpdates.generateWelcomeBanner(currentUser.getUsersFirstName());
       domUpdates.placeCardsInCorrectSection(currentUser.trips, destinationsData);
     })
+}
+
+function calculateUsersSpentLastYear(user) {
+  user.calculateTotalSpent();
+  domUpdates.displayYearlyAmount(user.totalSpentThisYear);
 }
 
 function claculateNewTripCost() {

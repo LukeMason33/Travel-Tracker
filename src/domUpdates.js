@@ -97,6 +97,10 @@ const domUpdates = {
     bookAFlightSection.classList.remove('hidden');
     dashboardHeader.classList.remove('hidden');
     bookAFlightSection.classList.remove('hidden');
+  },
+
+  displayYearlyAmount(amount) {
+    document.querySelector('.total-spent').innerText = `You have spent $${amount} this past year!`;
   }
 }
 
