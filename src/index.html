@@ -13,6 +13,7 @@
       <section class="login-page">
         <h1 class="login-page-title">Travel Tracker</h1>
         <form class="login-form">
+          <p style="color: red" class="login-error-message hidden">Invalid Username or Password</p>
           <div class="username-container">
             <label for="username-input">Username</label>
             <input name="username-input" class="username-input" type="text">
@@ -25,7 +26,7 @@
         </form>
       </section>
       <header class="dashboard-header hidden">
-        <h1 class="page-title"> <img src="./images/world.png" alt="Airplane Traveling Around the World" class="page-header-img">Travel Tracker</h1>
+        <img src="./images/world.png" alt="Airplane Traveling Around the World" class="page-header-img">
         <h1 class="welcome-message"></h1>
       </header>
         <hr>
@@ -41,6 +42,7 @@
         <hr>
       <form class="book-flight-form hidden">
         <h1 class="form-title">Request A Trip</h1>
+        <p style="color: red" class="error-message hidden">You must fill in all areas correctly on form</p>
         <div class="destinations-container">
           <label class="select-destination-label" for="select-destination">Select Destination: </label>
           <select name="select-destination" class="destinations-list"></select>

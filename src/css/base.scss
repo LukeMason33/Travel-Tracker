@@ -10,6 +10,7 @@ body {
   font-family: $primary-font;
   width: 100vw;
   height: 100vh;
+  margin: 0;
 }
 
 label {
@@ -28,6 +29,7 @@ label {
   margin-left: 20vw;
   background-color: white;
   border-radius: $round-border;
+  text-align: center;
 }
 
 .calculate-cost-button {
@@ -39,3 +41,6 @@ label {
 .hidden {
   display: none;
 }
+
+@import './mobile.scss';
+@import './tablet.scss';

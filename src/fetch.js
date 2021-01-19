@@ -1,7 +1,9 @@
+import domUpdates from './domUpdates.js';
+
 const fetchAPI = {
   handleFetchError: (response) => {
     if(!response.ok) {
-      throw 'We are having difficulty getting the data right now!';
+      throw response;
     }
     return response;
   },
@@ -10,21 +12,18 @@ const fetchAPI = {
     return fetch (`http://localhost:3001/api/v1/travelers/${userID}`)
       .then(response => fetchAPI.handleFetchError(response))
       .then(response => response.json())
-      .catch(error => console.log(error));
   },
 
   fetchTripsData: () => {
     return fetch("http://localhost:3001/api/v1/trips")
       .then(response => fetchAPI.handleFetchError(response))
       .then(response => response.json())
-      .catch(error => console.log(error));
   },
 
   fetchDestinationsData: () => {
     return fetch("http://localhost:3001/api/v1/destinations")
       .then(response => fetchAPI.handleFetchError(response))
       .then(response => response.json())
-      .catch(error => console.log(error));
   },
 
   postNewTrip: (trip) => {
@@ -44,7 +43,6 @@ const fetchAPI = {
     })
     .then(response => fetchAPI.handleFetchError(response))
     .then(response => response.json())
-    .catch(error => console.log(error));
   }
 }
 
