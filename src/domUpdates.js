@@ -1,13 +1,15 @@
 //QUERY SELECTORS
-let welcomeBanner = document.querySelector('.welcome-message');
-let upcomingFlightsSection = document.querySelector('.upcoming-flights');
-let pendingFlightsSection = document.querySelector('.pending-flights');
-let pastFlightsSection = document.querySelector('.past-flights');
-let mainDashboard = document.querySelector('.main-dashboard');
-let bookAFlightSection = document.querySelector('.book-a-flight');
-let bookAFlightForm = document.querySelector('.book-flight-form');
-let destinationsDropdown = document.querySelector('.destinations-list');
-let newTripCostSection = document.querySelector('.cost-of-trip-container');
+const welcomeBanner = document.querySelector('.welcome-message');
+const upcomingFlightsSection = document.querySelector('.upcoming-flights');
+const pendingFlightsSection = document.querySelector('.pending-flights');
+const pastFlightsSection = document.querySelector('.past-flights');
+const mainDashboard = document.querySelector('.main-dashboard');
+const bookAFlightSection = document.querySelector('.book-a-flight');
+const bookAFlightForm = document.querySelector('.book-flight-form');
+const destinationsDropdown = document.querySelector('.destinations-list');
+const newTripCostSection = document.querySelector('.cost-of-trip-container');
+const dashboardHeader = document.querySelector('.dashboard-header');
+const loginPage = document.querySelector('.login-page');
 
 
 //FUNCTIONS
@@ -83,6 +85,14 @@ const domUpdates = {
     bookAFlightSection.classList.remove('hidden');
     bookAFlightForm.classList.add('hidden');
     newTripCostSection.classList.add('hidden');
+  },
+
+  showDashboardAfterLogin() {
+    loginPage.classList.add('hidden');
+    mainDashboard.classList.remove('hidden');
+    bookAFlightSection.classList.remove('hidden');
+    dashboardHeader.classList.remove('hidden');
+    bookAFlightSection.classList.remove('hidden');
   }
 }
 
