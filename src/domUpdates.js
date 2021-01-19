@@ -36,7 +36,7 @@ const domUpdates = {
       </section>`;
   },
 
-  placeCardsInCorrectSection (trips, destinations) {
+  placeCardsInCorrectSection(trips, destinations) {
     let currentTime = new Date().getTime();
     trips.forEach(trip => {
       let tripDateToNum = new Date(trip.date).getTime();
@@ -50,18 +50,28 @@ const domUpdates = {
     })
   },
 
-  populateDestinationsForForm (destinationsData) {
+  populateDestinationsForForm(destinationsData) {
     destinationsData.destinations.forEach(destination => {
       destinationsDropdown.innerHTML += `
         <option value="${destination.id}">${destination.destination}</option>`
     })
   },
 
-  displayBookFlightForm (dataSet) {
+  displayBookFlightForm(dataSet) {
     mainDashboard.classList.add('hidden');
     bookAFlightSection.classList.add('hidden');
     bookAFlightForm.classList.remove('hidden');
     this.populateDestinationsForForm(dataSet);
+  },
+
+  displayNewTripCost(trip) {
+    let newTripCost = document.querySelector('.cost-of-trip-container');
+    if (document.querySelector('.select-duration').value === undefined || document.querySelector('.select-travelers').value === undefined) {
+      alert('You must fill in all areas on form');
+    } else {
+      newTripCost.classList.remove('hidden');
+      newTripCost.insertAdjacentHTML('beforeend', `<p>$${trip.cost}</p>`);
+    }
   }
 }
 

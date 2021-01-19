@@ -12,7 +12,7 @@ class Trip {
   }
 
   calculateTotalCostofTrip (dataSet) {
-    let tripDestination = dataSet.destinations.find(data => this.destinationID === data.id);
+    let tripDestination = dataSet.destinations.find(data => this.destinationID == data.id);
     let totalLodgingCost = (this.duration * tripDestination.estimatedLodgingCostPerDay);
     let totalFlightCost = (this.travelers * tripDestination.estimatedFlightCostPerPerson);
     let agentFee = (totalLodgingCost + totalFlightCost) * 0.1;
