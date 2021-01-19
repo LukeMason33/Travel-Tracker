@@ -10,16 +10,35 @@
     <title>Travel Tracker</title>
   </head>
   <body>
-      <header class="dashboard-header">
+      <section class="login-page">
+        <h1 class="login-page-title">Travel Tracker</h1>
+        <form class="login-form">
+          <div class="username-container">
+            <label for="username-input">Username</label>
+            <input name="username-input" class="username-input" type="text">
+          </div>
+          <div class="password-container">
+            <label for="password-input">Password</label>
+            <input name="password-input" class="password-input" type="text">
+          </div>
+          <button class="login-button" type="button">Login</button>
+        </form>
+      </section>
+      <header class="dashboard-header hidden">
         <h1 class="page-title"> <img src="./images/world.png" alt="Airplane Traveling Around the World" class="page-header-img">Travel Tracker</h1>
         <h1 class="welcome-message"></h1>
       </header>
-      <hr>
-      <section class="book-a-flight">
-        <label for="book-flight">Book a Flight With Your Agent</label>
-        <button name="book-flight" class="book-now-btn">Book Flight</button>
+        <hr>
+      <section class="book-a-flight hidden">
+        <div class="bbok-flight-container">
+          <label for="book-flight">Book a Flight With Your Agent</label>
+          <button name="book-flight" class="book-now-btn">Book Flight</button>
+        </div>
+        <div class="total-spent-container">
+          <p class="total-spent"></p>
+        </div>
       </section>
-      <hr>
+        <hr>
       <form class="book-flight-form hidden">
         <h1 class="form-title">Request A Trip</h1>
         <div class="destinations-container">
@@ -32,7 +51,7 @@
         </div>
         <div class="trip-length">
           <label for="number-of-days" class="select-duration-label">How Long Will This Trip Be (In Days)?</label>
-          <input name="number-of-days" class="select-duration" placeholder="e.g. 4">
+          <input name="number-of-days" type="text" class="select-duration" placeholder="e.g. 4">
         </div>
         <div class="number-of-travelers-container">
           <label class="number-of-travelers-label" for ="number-of-travelers">How Many People Will be Traveling? </label>
@@ -48,21 +67,24 @@
           <button class="submit-request">Submit Trip</button>
         </div>
       </form>
-      <main class="main-dashboard">
+      <main class="main-dashboard hidden">
         <div class="flights-content-container">
-          <section  class="flight-section" id="upcoming-flights">
+          <section class="flight-section">
             <h2 class="flight-section-title">Upcoming Flights</h2>
-            <div class="upcoming-flights flight-cards-container">
+            <p class="no-info-upcoming">Nothing to display for you here!</p>
+            <div class="upcoming-flights flight-cards-container hidden">
             </div>
           </section>
-          <section  class="flight-section" id="pending-flights">
+          <section  class="flight-section">
             <h2 class="flight-section-title">Pending Flights</h2>
-            <div class="pending-flights flight-cards-container">
+            <p class="no-info-pending">Nothing to display for you here!</p>
+            <div class="pending-flights flight-cards-container hidden">
             </div>
           </section>
-          <section class="flight-section" id="past-flights">
+          <section class="flight-section">
             <h2 class="flight-section-title">Past Flights</h2>
-            <div class="past-flights flight-cards-container">
+            <p class="no-info-past">Nothing to display for you here!</p>
+            <div class="past-flights flight-cards-container hidden">
             </div>
           </section>
         </div>

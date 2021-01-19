@@ -19,15 +19,19 @@ const formDestinationInput = document.querySelector('.destinations-list');
 const formDurationInput = document.querySelector('.select-duration');
 const formTravelersInput = document.querySelector('.select-travelers');
 const formDateInput = document.querySelector('.select-date');
+const loginUsernameInput = document.querySelector('.username-input');
+const loginPasswordInput = document.querySelector('.password-input');
+const loginButton = document.querySelector('.login-button');
+
 
 //EVENT LISTENERS
-window.addEventListener('load', generateUsersInfo);
 bookAFlightBtn.addEventListener('click', function() {
   domUpdates.displayBookFlightForm(destinationsData);
 });
 claculateNewTripCostBtn.addEventListener('click', claculateNewTripCost);
 returnToDashboardBtn.addEventListener('click', domUpdates.returnToDashboard);
 submitTripBtn.addEventListener('click', addTripRequest);
+loginButton.addEventListener('click', checkLoginCredentials);
 
 //GLOBAL VARIABLES
 let currentUser;
@@ -35,17 +39,22 @@ let destinationsData;
 let tripsData;
 
 //FETCH DAT
-function generateUsersInfo() {
-  Promise.all([fetchAPI.fetchUserData(6), fetchAPI.fetchTripsData(), fetchAPI.fetchDestinationsData()])
+function generateUsersInfo(userId) {
+  Promise.all([fetchAPI.fetchUserData(userId), fetchAPI.fetchTripsData(), fetchAPI.fetchDestinationsData()])
     .then(data => {
       currentUser = new Traveler(data[0]);
       tripsData = data[1];
       destinationsData = data[2];
       currentUser.findUsersTrips(tripsData.trips, destinationsData);
-      currentUser.calculateTotalSpent();
+      calculateUsersSpentLastYear(currentUser);
       domUpdates.generateWelcomeBanner(currentUser.getUsersFirstName());
       domUpdates.placeCardsInCorrectSection(currentUser.trips, destinationsData);
     })
+}
+
+function calculateUsersSpentLastYear(user) {
+  user.calculateTotalSpent();
+  domUpdates.displayYearlyAmount(user.totalSpentThisYear);
 }
 
 function claculateNewTripCost() {
@@ -80,4 +89,16 @@ function addTripRequest() {
       currentUser.calculateTotalSpent();
       domUpdates.placeCardsInCorrectSection(currentUser.trips, destinationsData);
     });
+  domUpdates.returnToDashboard();
+  event.preventDefault();
+}
+
+function checkLoginCredentials() {
+  if(loginUsernameInput.value.length <= 10 && loginUsernameInput.value.includes('traveler') && loginPasswordInput.value === 'travel2020') {
+    let userID = Number(loginUsernameInput.value.slice(-2));
+    generateUsersInfo(userID);
+    domUpdates.showDashboardAfterLogin();
+  } else {
+    console.log('no');
+  }
 }

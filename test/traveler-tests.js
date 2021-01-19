@@ -33,7 +33,7 @@ describe ('Traveler', function () {
   })
 
   it('should initialize with $0 spent', function() {
-    expect(user.totalSpent).to.eq(0);
+    expect(user.totalSpentThisYear).to.eq(0);
   })
 
   it('should be able to find the user specific trips', function() {
@@ -76,6 +76,6 @@ describe ('Traveler', function () {
    it('should calculate the total amount spent by traveler', function() {
      user.findUsersTrips(trips, destinations);
      user.calculateTotalSpent();
-     expect(user.totalSpent).to.eq(15576);
+     expect(user.totalSpentThisYear).to.eq(9757);
    })
 })
