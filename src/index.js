@@ -11,8 +11,10 @@ import fetchAPI from './fetch.js';
 import domUpdates from './domUpdates.js';
 
 //QUERY SELECTORS
-let bookAFlightBtn = document.querySelector('.book-now-btn');
-let claculateNewTripCostBtn = document.querySelector('.calculate-cost-button');
+const bookAFlightBtn = document.querySelector('.book-now-btn');
+const claculateNewTripCostBtn = document.querySelector('.calculate-cost-button');
+const returnToDashboardBtn = document.querySelector('.return-to-dashboard');
+
 
 //EVENT LISTENERS
 window.addEventListener('load', generateUsersInfo);
@@ -22,6 +24,8 @@ bookAFlightBtn.addEventListener('click', function() {
 });
 
 claculateNewTripCostBtn.addEventListener('click', claculateNewTripCost);
+
+returnToDashboardBtn.addEventListener('click', domUpdates.returnToDashboard);
 
 //GLOBAL VARIABLES
 let currentUser;

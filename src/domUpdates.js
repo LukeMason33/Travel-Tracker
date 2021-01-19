@@ -7,6 +7,8 @@ let mainDashboard = document.querySelector('.main-dashboard');
 let bookAFlightSection = document.querySelector('.book-a-flight');
 let bookAFlightForm = document.querySelector('.book-flight-form');
 let destinationsDropdown = document.querySelector('.destinations-list');
+let newTripCostSection = document.querySelector('.cost-of-trip-container');
+
 
 //FUNCTIONS
 const domUpdates = {
@@ -65,13 +67,19 @@ const domUpdates = {
   },
 
   displayNewTripCost(trip) {
-    let newTripCost = document.querySelector('.cost-of-trip-container');
     if (document.querySelector('.select-duration').value === undefined || document.querySelector('.select-travelers').value === undefined) {
       alert('You must fill in all areas on form');
     } else {
-      newTripCost.classList.remove('hidden');
-      newTripCost.insertAdjacentHTML('beforeend', `<p>$${trip.cost}</p>`);
+      newTripCostSection.classList.remove('hidden');
+      document.querySelector('.new-trip-cost').innerText = `$${trip.cost}`;
     }
+  },
+
+  returnToDashboard() {
+    mainDashboard.classList.remove('hidden');
+    bookAFlightSection.classList.remove('hidden');
+    bookAFlightForm.classList.add('hidden');
+    newTripCostSection.classList.add('hidden');
   }
 }
 
