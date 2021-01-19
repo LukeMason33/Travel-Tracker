@@ -1,0 +1,68 @@
+@media screen and (min-width: 320px) and (max-width: 599px) {
+  p {
+    margin: .4vh;
+    margin-bottom: .1vh;
+    font-size: 2vh;
+  }
+
+  .login-form {
+    height: 45vh;
+  }
+
+  .login-page {
+    height: 100vh;
+  }
+
+  .login-button {
+    width: 15vw;
+  }
+
+  .dashboard-header {
+    height: 8vh;
+  }
+
+  .welcome-message {
+    font-size: 1.3em;
+  }
+
+  .page-header-img {
+    margin-top: 1vh;
+  }
+
+  .flight-cards-container {
+    height: 40vh;
+  }
+
+  .flight-card {
+    height: 40vh;
+    width: 45vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+
+  }
+
+  .destination-img {
+    height: 10vh;
+    width: 40vw;
+  }
+
+  .form-title {
+    width: 60vw;
+    text-align: center;
+    font-size: x-large;
+  }
+
+  .book-flight-form {
+    width: 70vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    height: 80vh;
+    text-align: center;
+  }
+
+  .calculate-cost-button {
+    width: 25vw;
+    height: 6vh;
+  }
+
+}
