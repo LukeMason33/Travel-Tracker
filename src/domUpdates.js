@@ -31,12 +31,12 @@ const domUpdates = {
         <img class="destination-img" src=${destination.image} alt=${destination.alt}>
         <div class="trip-dates-container">
           <div class="start-date-container">
-            <h3 class="start-date-header card-header">From:</h3>
+            <h3 class="start-date-header card-header">On:</h3>
             <p class="trip-start-date">${trip.date}</p>
           </div>
           <div class="end-date-container">
-            <h3 class="end-date-header card-header">To:</h3>
-            <p class="trip-end-date">Lovely Island</p>
+            <h3 class="end-date-header card-header">Days:</h3>
+            <p class="trip-end-date">${trip.duration}</p>
           </div>
         </div>
         <h3 class="trip-cost-header card-header">Cost:</h3>
