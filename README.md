@@ -6,25 +6,25 @@ Opening the Travel Tracker website will prompt the user to a login page. Here, t
 
 Login to Dashboard View:
 
-![screenshot of login](./images/login.png)
+![screenshot of login](./src/images/login.png)
 
-![screenshot of mainpage](./images/dashboard.png)
+![screenshot of mainpage](./src/images/dashboard.png)
 
 The user can click on the book now located in the header of the page, that will bring you a from where when filled out, you can calculate the cost of your made trip.
 
 Book trip form:
 
-![screenshot of form](./images/request.png)
+![screenshot of form](./src/images/request.png)
 
 After 'Calculate Cost' button is clicked:
 
-![screenshot of cost](./images/calculate-cost.png)
+![screenshot of cost](./src/images/calculate-cost.png)
 
 Once the user feels confident that the form is filled out and the trip is what they want, they then can click the submit button which will then take the user back to the dashboard and display their new trip in the pending section.
 
 Dashboard After Submit:  
 
-![screenshot of dashboard](./images/after-submit.png)
+![screenshot of dashboard](./src/images/after-submit.png)
 
 ## How to Install
 1. `fork` this repository
