@@ -25,7 +25,6 @@ const loginButton = document.querySelector('.login-button');
 
 
 //EVENT LISTENERS
-// window.addEventListener('load', generateUsersInfo);
 bookAFlightBtn.addEventListener('click', function() {
   domUpdates.displayBookFlightForm(destinationsData);
 });

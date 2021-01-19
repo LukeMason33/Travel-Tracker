@@ -10,7 +10,9 @@ const destinationsDropdown = document.querySelector('.destinations-list');
 const newTripCostSection = document.querySelector('.cost-of-trip-container');
 const dashboardHeader = document.querySelector('.dashboard-header');
 const loginPage = document.querySelector('.login-page');
-
+const noInfoPendingMessage = document.querySelector('.no-info-pending');
+const noInfoUpcomingMessage = document.querySelector('.no-info-upcoming');
+const noInfoPastMessage = document.querySelector('.no-info-past');
 
 //FUNCTIONS
 const domUpdates = {
@@ -18,8 +20,10 @@ const domUpdates = {
     welcomeBanner.innerText = `Welcome ${name}`;
   },
 
-  generateTripCard(trip, dataSet, section) {
+  generateTripCard(trip, dataSet, section, noInfoMessage) {
     let destination = trip.getDestinationInfoById(dataSet);
+    section.classList.remove('hidden');
+    noInfoMessage.classList.add('hidden');
     section.innerHTML += `
       <section class="flight-card">
         <h3 class="destination-header card-header">Destination:</h3>
@@ -48,11 +52,11 @@ const domUpdates = {
     trips.forEach(trip => {
       let tripDateToNum = new Date(trip.date).getTime();
       if (trip.status === 'pending') {
-        this.generateTripCard(trip, destinations, pendingFlightsSection);
+        this.generateTripCard(trip, destinations, pendingFlightsSection, noInfoPendingMessage);
       } else if (tripDateToNum > currentTime) {
-        this.generateTripCard(trip, destinations, upcomingFlightsSection);
+        this.generateTripCard(trip, destinations, upcomingFlightsSection, noInfoUpcomingMessage);
       } else {
-        this.generateTripCard(trip, destinations, pastFlightsSection);
+        this.generateTripCard(trip, destinations, pastFlightsSection, noInfoPastMessage);
       }
     })
   },
