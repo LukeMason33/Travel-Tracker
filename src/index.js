@@ -12,7 +12,7 @@ import domUpdates from './domUpdates.js';
 
 //QUERY SELECTORS
 const bookAFlightBtn = document.querySelector('.book-now-btn');
-const claculateNewTripCostBtn = document.querySelector('.calculate-cost-button');
+const calculateNewTripCostBtn = document.querySelector('.calculate-cost-button');
 const returnToDashboardBtn = document.querySelector('.return-to-dashboard');
 const submitTripBtn = document.querySelector('.submit-request');
 const formDestinationInput = document.querySelector('.destinations-list');
@@ -28,7 +28,7 @@ const loginButton = document.querySelector('.login-button');
 bookAFlightBtn.addEventListener('click', function() {
   domUpdates.displayBookFlightForm(destinationsData);
 });
-claculateNewTripCostBtn.addEventListener('click', claculateNewTripCost);
+calculateNewTripCostBtn.addEventListener('click', calculateNewTripCost);
 returnToDashboardBtn.addEventListener('click', domUpdates.returnToDashboard);
 submitTripBtn.addEventListener('click', addTripRequest);
 loginButton.addEventListener('click', checkLoginCredentials);
@@ -57,7 +57,7 @@ function calculateUsersSpentLastYear(user) {
   domUpdates.displayYearlyAmount(user.totalSpentThisYear);
 }
 
-function claculateNewTripCost() {
+function calculateNewTripCost() {
   let newTrip = {
     destinationID: `${formDestinationInput.value}`,
     duration: `${formDurationInput.value}`,

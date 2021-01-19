@@ -76,8 +76,11 @@ const domUpdates = {
   },
 
   displayNewTripCost(trip) {
-    if (document.querySelector('.select-duration').value === undefined || document.querySelector('.select-travelers').value === undefined) {
-      alert('You must fill in all areas on form');
+    if (document.querySelector('.select-duration').value === '' || document.querySelector('.select-travelers').value === '') {
+      document.querySelector('.error-message').classList.remove('hidden');
+      setTimeout(() => {
+        document.querySelector('.error-message').classList.add('hidden');
+      }, 5000);
     } else {
       newTripCostSection.classList.remove('hidden');
       document.querySelector('.new-trip-cost').innerText = `$${trip.cost}`;

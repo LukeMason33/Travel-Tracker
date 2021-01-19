@@ -29,6 +29,7 @@ label {
   margin-left: 20vw;
   background-color: white;
   border-radius: $round-border;
+  text-align: center;
 }
 
 .calculate-cost-button {
@@ -42,3 +43,4 @@ label {
 }
 
 @import './mobile.scss';
+@import './tablet.scss';
