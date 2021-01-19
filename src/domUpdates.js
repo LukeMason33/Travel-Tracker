@@ -76,11 +76,8 @@ const domUpdates = {
   },
 
   displayNewTripCost(trip) {
-    if (document.querySelector('.select-duration').value === '' || document.querySelector('.select-travelers').value === '') {
-      document.querySelector('.error-message').classList.remove('hidden');
-      setTimeout(() => {
-        document.querySelector('.error-message').classList.add('hidden');
-      }, 5000);
+    if (document.querySelector('.select-duration').value === '' || document.querySelector('.select-travelers').value === '' || document.querySelector('.select-date').value === '') {
+      this.displayErrorMessage();
     } else {
       newTripCostSection.classList.remove('hidden');
       document.querySelector('.new-trip-cost').innerText = `$${trip.cost}`;
@@ -104,6 +101,17 @@ const domUpdates = {
 
   displayYearlyAmount(amount) {
     document.querySelector('.total-spent').innerText = `You have spent $${amount} this past year!`;
+  },
+
+  displayFetchError() {
+    document.querySelector('body').innerHTML = `<p>We are unable to get the data at this time. Reload the site and try again!</p>`;
+  },
+
+  displayErrorMessage() {
+    document.querySelector('.error-message').classList.remove('hidden');
+    setTimeout(() => {
+      document.querySelector('.error-message').classList.add('hidden');
+    }, 5000);
   }
 }
 

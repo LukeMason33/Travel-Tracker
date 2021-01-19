@@ -50,6 +50,7 @@ function generateUsersInfo(userId) {
       domUpdates.generateWelcomeBanner(currentUser.getUsersFirstName());
       domUpdates.placeCardsInCorrectSection(currentUser.trips, destinationsData);
     })
+    .catch(error => domUpdates.displayFetchError());
 }
 
 function calculateUsersSpentLastYear(user) {
@@ -81,15 +82,18 @@ function addTripRequest() {
     status: 'pending',
     suggestedActivities: []
   };
-  fetchAPI.postNewTrip(newTrip);
-  fetchAPI.fetchTripsData()
-    .then(trips => {
-      tripsData = trips;
-      currentUser.findUsersTrips(tripsData.trips, destinationsData);
-      currentUser.calculateTotalSpent();
-      domUpdates.placeCardsInCorrectSection(currentUser.trips, destinationsData);
-    });
-  domUpdates.returnToDashboard();
+  fetchAPI.postNewTrip(newTrip)
+    .then(respone => {
+      fetchAPI.fetchTripsData()
+        .then(trips => {
+          tripsData = trips;
+          currentUser.findUsersTrips(tripsData.trips, destinationsData);
+          currentUser.calculateTotalSpent();
+          domUpdates.placeCardsInCorrectSection(currentUser.trips, destinationsData);
+          domUpdates.returnToDashboard();
+        })
+      })
+    .catch(error => domUpdates.displayErrorMessage())
   event.preventDefault();
 }
 
@@ -99,6 +103,9 @@ function checkLoginCredentials() {
     generateUsersInfo(userID);
     domUpdates.showDashboardAfterLogin();
   } else {
-    console.log('no');
+    document.querySelector('.login-error-message').classList.remove('hidden');
+    setTimeout(() => {
+      document.querySelector('.login-error-message').classList.add('hidden');
+    }, 5000)
   }
 }
