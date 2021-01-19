@@ -6,7 +6,7 @@ class Traveler {
     this.name = user.name;
     this.travelerType = user.travelerType;
     this.trips = [];
-    this.totalSpent = 0
+    this.totalSpentThisYear = 0
   }
 
   getUsersFirstName() {
@@ -25,8 +25,10 @@ class Traveler {
   }
 
   calculateTotalSpent() {
-    this.totalSpent = this.trips.reduce((total, trip) => {
-      total += trip.cost;
+    this.totalSpentThisYear = this.trips.reduce((total, trip) => {
+      if (trip.date.includes("2020")) {
+        total += trip.cost;
+      }
       return total;
     }, 0)
   }
