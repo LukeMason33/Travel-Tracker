@@ -9,7 +9,13 @@ class Traveler {
     this.totalSpent = 0
   }
 
+  getUsersFirstName() {
+    let usersFullName = this.name.split(' ');
+    return usersFullName[0];
+  }
+
   findUsersTrips (tripsData, destinationData) {
+    this.trips = [];
     tripsData.filter(trip => {
       if (trip.userID === this.id) {
         this.trips.push(new Trip(trip));

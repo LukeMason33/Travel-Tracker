@@ -7,4 +7,34 @@
 body {
   background: $primary-background;
   font-family: $primary-font;
+  width: 100vw;
+  height: 100vh;
+}
+
+label {
+  color: $header-font-color;
+  font-weight: bolder;
+}
+
+.book-flight-form {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 60vh;
+  width: 60vw;
+  margin-left: 20vw;
+  background-color: white;
+  border-radius: $round-border;
+}
+
+.calculate-cost-button {
+  background-color: $text-color;
+  width: 15vw;
+  height: 5vh;
+}
+
+.hidden {
+  display: none;
 }

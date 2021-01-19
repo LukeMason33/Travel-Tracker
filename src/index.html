@@ -15,43 +15,54 @@
         <h1 class="welcome-message"></h1>
       </header>
       <hr>
-      <section id="book-a-flight">
+      <section class="book-a-flight">
         <label for="book-flight">Book a Flight With Your Agent</label>
         <button name="book-flight" class="book-now-btn">Book Flight</button>
       </section>
       <hr>
-      <main id="main-dashboard">
+      <form class="book-flight-form hidden">
+        <h1 class="form-title">Request A Trip</h1>
+        <div class="destinations-container">
+          <label class="select-destination-label" for="select-destination">Select Destination: </label>
+          <select name="select-destination" class="destinations-list"></select>
+        </div>
+        <div class="slect-date-container">
+          <label for="select-date" class="select-date-label">Select a Start Date: </label>
+          <input name ="select-date" type="date" class="select-date">
+        </div>
+        <div class="trip-length">
+          <label for="number-of-days" class="select-duration-label">How Long Will This Trip Be (In Days)?</label>
+          <input name="number-of-days" class="select-duration" placeholder="e.g. 4">
+        </div>
+        <div class="number-of-travelers-container">
+          <label class="number-of-travelers-label" for ="number-of-travelers">How Many People Will be Traveling? </label>
+          <input name="number-of-travelers" class="select-travelers" type="text" placeholder="e.g. 2">
+        </div>
+        <button type="button" class="calculate-cost-button">Calculate Cost</button>
+        <div class="cost-of-trip-container hidden">
+          <h2 class="new-trip-cost-header">Total Price (10% Agent Fee Included):</h2>
+          <p class="new-trip-cost"></p>
+        </div>
+        <div class="form-buttons-container">
+          <button type="button" class="return-to-dashboard">Return To Main</button>
+          <button class="submit-request">Submit Trip</button>
+        </div>
+      </form>
+      <main class="main-dashboard">
         <div class="flights-content-container">
           <section  class="flight-section" id="upcoming-flights">
             <h2 class="flight-section-title">Upcoming Flights</h2>
-              <div class="flight-cards-container">
-                <section class="flight-card">
-                  <h3 class="destination-header card-header">Destination:</h3>
-                    <p class="destination-name">Lovely Island</p>
-                  <img class="destination-img" src="https://images.unsplash.com/photo-1489171084589-9b5031ebcf9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80" alt="something">
-                  <div class="trip-dates-container">
-                    <div class="start-date-container">
-                      <h3 class="start-date-header card-header">From:</h3>
-                      <p class="trip-start-date">Lovely Island</p>
-                    </div>
-                    <div class="end-date-container">
-                      <h3 class="end-date-header card-header">To:</h3>
-                      <p class="trip-end-date">Lovely Island</p>
-                    </div>
-                  </div>
-                  <h3 class="trip-cost-header card-header">Cost:</h3>
-                    <p class="trip-cost">Lovely Island</p>
-                </section>
-              </div>
+            <div class="upcoming-flights flight-cards-container">
+            </div>
           </section>
           <section  class="flight-section" id="pending-flights">
             <h2 class="flight-section-title">Pending Flights</h2>
-            <div class="flight-cards-container">
+            <div class="pending-flights flight-cards-container">
             </div>
           </section>
           <section class="flight-section" id="past-flights">
             <h2 class="flight-section-title">Past Flights</h2>
-            <div class="flight-cards-container">
+            <div class="past-flights flight-cards-container">
             </div>
           </section>
         </div>

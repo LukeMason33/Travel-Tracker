@@ -4,14 +4,16 @@
   justify-content: center;
   background-color: white;
   width: 25vw;
-  height: 55vh;
+  height: 53vh;
   border-radius: $round-border;
   margin: 0;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .destination-img {
   border-radius: $round-border;
-  height: 25vh;
+  height: 20vh;
   width: 24.5vw;
   align-self: center;
 }
