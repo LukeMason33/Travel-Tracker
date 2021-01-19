@@ -25,6 +25,26 @@ const fetchAPI = {
       .then(response => fetchAPI.handleFetchError(response))
       .then(response => response.json())
       .catch(error => console.log(error));
+  },
+
+  postNewTrip: (trip) => {
+    return featch("http://localhost:3001/api/v1/trips", {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        id: trip.id,
+        userID: trip.userID,
+        destinationID: trip.destinationID,
+        travelers: trip.travelers,
+        date: trip.date,
+        duration: trip.duration,
+        status: 'pending',
+        suggestedActivities: []
+      })
+    })
+    .then(response => fetchAPI.handleFetchError(response))
+    .then(response => response.json())
+    .catch(error => console.log(error));
   }
 }
 
