@@ -35,8 +35,8 @@ const domUpdates = {
             <p class="trip-start-date">${trip.date}</p>
           </div>
           <div class="end-date-container">
-            <h3 class="end-date-header card-header">Days:</h3>
-            <p class="trip-end-date">${trip.duration}</p>
+            <h3 class="end-date-header card-header">Duration: </h3>
+            <p class="trip-end-date">${trip.duration} Days</p>
           </div>
         </div>
         <h3 class="trip-cost-header card-header">Cost:</h3>

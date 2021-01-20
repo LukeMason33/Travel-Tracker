@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="authors" content="Luke Mason">
+    <meta name="description" content="Mod 2 - Travel Tracker">
+    <meta charset="utf-8">
+    <meta name="viewport" content ="width=device-width, initial-scale=1">
+    <link type="text/css" href="./css/base.scss">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <title>Travel Tracker</title>
+  </head>
+  <body>
+      <section class="login-page">
+        <h1 class="login-page-title">Travel Tracker</h1>
+        <form class="login-form">
+          <p style="color: red" class="login-error-message hidden">Invalid Username or Password</p>
+          <div class="username-container">
+            <label for="username-input">Username</label>
+            <input name="username-input" class="username-input" type="text">
+          </div>
+          <div class="password-container">
+            <label for="password-input">Password</label>
+            <input name="password-input" class="password-input" type="text">
+          </div>
+          <button class="login-button" type="button">Login</button>
+        </form>
+      </section>
+      <header class="dashboard-header hidden">
+        <img src="./images/world.png" alt="Airplane Traveling Around the World" class="page-header-img">
+        <h1 class="welcome-message"></h1>
+      </header>
+        <hr>
+      <section class="book-a-flight hidden">
+        <div class="bbok-flight-container">
+          <label for="book-flight">Book a Flight With Your Agent</label>
+          <button name="book-flight" class="book-now-btn">Book Flight</button>
+        </div>
+        <div class="total-spent-container">
+          <p class="total-spent"></p>
+        </div>
+      </section>
+        <hr>
+      <form class="book-flight-form hidden">
+        <h1 class="form-title">Request A Trip</h1>
+        <p style="color: red" class="error-message hidden">You must fill in all areas correctly on form</p>
+        <div class="destinations-container">
+          <label class="select-destination-label" for="select-destination">Select Destination: </label>
+          <select name="select-destination" class="destinations-list"></select>
+        </div>
+        <div class="slect-date-container">
+          <label for="select-date" class="select-date-label">Select a Start Date: </label>
+          <input name ="select-date" type="date" class="select-date">
+        </div>
+        <div class="trip-length">
+          <label for="number-of-days" class="select-duration-label">How Long Will This Trip Be (In Days)?</label>
+          <input name="number-of-days" type="text" class="select-duration" placeholder="e.g. 4">
+        </div>
+        <div class="number-of-travelers-container">
+          <label class="number-of-travelers-label" for ="number-of-travelers">How Many People Will be Traveling? </label>
+          <input name="number-of-travelers" class="select-travelers" type="text" placeholder="e.g. 2">
+        </div>
+        <button type="button" class="calculate-cost-button">Calculate Cost</button>
+        <div class="cost-of-trip-container hidden">
+          <h2 class="new-trip-cost-header">Total Price (10% Agent Fee Included):</h2>
+          <p class="new-trip-cost"></p>
+        </div>
+        <div class="form-buttons-container">
+          <button type="button" class="return-to-dashboard">Return To Main</button>
+          <button class="submit-request">Submit Trip</button>
+        </div>
+      </form>
+      <main class="main-dashboard hidden">
+        <div class="flights-content-container">
+          <section class="flight-section">
+            <h2 class="flight-section-title">Upcoming Flights</h2>
+            <p class="no-info-upcoming">Nothing to display for you here!</p>
+            <div class="upcoming-flights flight-cards-container hidden">
+            </div>
+          </section>
+          <section  class="flight-section">
+            <h2 class="flight-section-title">Pending Flights</h2>
+            <p class="no-info-pending">Nothing to display for you here!</p>
+            <div class="pending-flights flight-cards-container hidden">
+            </div>
+          </section>
+          <section class="flight-section">
+            <h2 class="flight-section-title">Past Flights</h2>
+            <p class="no-info-past">Nothing to display for you here!</p>
+            <div class="past-flights flight-cards-container hidden">
+            </div>
+          </section>
+        </div>
+      </main>
+  <script src="main.bundle.js"></script></body>
+</html>
